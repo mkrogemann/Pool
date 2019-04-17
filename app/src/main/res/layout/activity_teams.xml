@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/team_one"
+            android:layout_marginTop="28dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="32dp" app:layout_constraintStart_toStartOf="parent"
+            android:labelFor="@id/team_one" android:hint="@string/team_1_hint"/>
+
+    <EditText
+        android:id="@+id/team_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/team_2_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_one" />
+    <TextView
+            android:text="@string/first_break_label"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:id="@+id/team_one_hint"
+            app:layout_constraintTop_toBottomOf="@+id/team_one" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp" android:layout_marginTop="8dp"/>
+
+    <CheckBox
+        android:id="@+id/race_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/race"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_two" />
+
+    <EditText
+        android:id="@+id/race_to"
+        android:layout_width="91dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/race_to"
+        android:inputType="number"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/race_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/team_two" />
+
+    <RadioButton
+        android:id="@+id/alternate_break"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:checked="true"
+        android:text="@string/alternate_break"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/race_checkbox" />
+
+    <RadioButton
+        android:id="@+id/winner_break"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/winner_break"
+        app:layout_constraintStart_toEndOf="@+id/alternate_break"
+        app:layout_constraintTop_toBottomOf="@+id/race_checkbox" />
+
+    <Button
+        android:id="@+id/start_match_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/start_match"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alternate_break" />
+
+</android.support.constraint.ConstraintLayout>
