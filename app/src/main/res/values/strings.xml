@@ -5,7 +5,7 @@
     <string name="team_2_hint">Team 2</string>
     <string name="first_break_label">(has first break)</string>
     <string name="race">Race?</string>
-    <string name="race_to">Race to</string>
+    <string name="race_to">To</string>
     <string name="alternate_break">Alternate Break</string>
     <string name="winner_break">Winner Break</string>
     <string name="start_match">Start match</string>
@@ -16,4 +16,5 @@
     <string name="team_one_wins">Team one wins</string>
     <string name="team_two_wins">Team two wins</string>
     <string name="rack_number">Rack #</string>
+    <string name="default_race_to_five">5</string>
 </resources>
