@@ -57,11 +57,25 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
+        android:checked="true"
         android:text="@string/race"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/team_two" />
+
+    <TextView
+        android:id="@+id/race_to_label"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="42dp"
+        android:text="@string/race_to"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/race_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/team_two" />
+
 
     <EditText
         android:id="@+id/race_to"
@@ -72,73 +86,58 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/default_race_to_five"
+        android:importantForAutofill="no"
         android:inputType="number"
-        android:visibility="invisible"
+        android:textStyle="normal"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toEndOf="@+id/race_to_label"
-        app:layout_constraintTop_toBottomOf="@+id/team_two"
-        android:importantForAutofill="no" />
-
-    <RadioButton
-        android:id="@+id/alternate_break"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:checked="true"
-        android:text="@string/alternate_break"
-        app:layout_constraintStart_toStartOf="@+id/break_type_group"
-        app:layout_constraintTop_toTopOf="@+id/break_type_group" />
-
-    <RadioButton
-        android:id="@+id/winner_break"
-        android:layout_width="136dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/winner_break"
-        app:layout_constraintEnd_toEndOf="@+id/break_type_group"
-        app:layout_constraintStart_toEndOf="@+id/alternate_break"
-        app:layout_constraintTop_toTopOf="@+id/break_type_group" />
+        app:layout_constraintTop_toBottomOf="@+id/team_two" />
 
     <Button
         android:id="@+id/start_match_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="32dp"
         android:text="@string/start_match"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/break_type_group" />
 
     <RadioGroup
         android:id="@+id/break_type_group"
-        android:layout_width="393dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="394dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="64dp"
+        android:checkedButton="@id/alternate_break"
         android:keyboardNavigationCluster="true"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/race_checkbox" >
+        app:layout_constraintTop_toBottomOf="@+id/race_checkbox">
+
+        <RadioButton
+            android:id="@+id/alternate_break"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@string/alternate_break"
+            tools:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/winner_break"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_weight="1"
+            android:text="@string/winner_break" />
 
     </RadioGroup>
-
-    <TextView
-        android:id="@+id/race_to_label"
-        android:layout_width="52dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/race_to"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/race_checkbox"
-        app:layout_constraintTop_toBottomOf="@+id/team_two" />
 
 </android.support.constraint.ConstraintLayout>
