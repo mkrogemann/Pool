@@ -39,16 +39,25 @@ class TeamsActivity : AppCompatActivity() {
     }
 
     private fun setupMatch(): Match {
+        val teamOneName = valueOrDefault(team_one.text.toString(), "Team 1")
+        val teamTwoName = valueOrDefault(team_two.text.toString(), "Team 2")
         val match = Match(
-            teamOne = team_one.text.toString(),
-            teamTwo = team_two.text.toString(),
+            teamOne = teamOneName,
+            teamTwo = teamTwoName,
             raceTo = if (race_checkbox.isChecked) {
-                race_to.text.toString().toInt()
+                valueOrDefault(race_to.text.toString(), "5").toInt()
             } else {
                 null
             },
             winnerBreak = winner_break.isChecked
         )
         return match
+    }
+
+    private fun valueOrDefault(value: String, default: String): String {
+        if (value.isBlank()) {
+            return default
+        }
+        return value
     }
 }
