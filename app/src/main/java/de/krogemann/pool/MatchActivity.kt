@@ -11,8 +11,15 @@ class MatchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match)
         val parcelable = intent.extras.getParcelable<Match>("MATCH")
-        val (teamOne, teamTwo, _, _, _, _, _) = parcelable
-        team_one_wins.text = "$teamOne wins"
-        team_two_wins.text = "$teamTwo wins"
+        val match = parcelable
+        initializeDisplayState(match)
+    }
+
+    private fun initializeDisplayState(match: Match) {
+        team_one_wins.setText(match.teamOne + " wins")
+        team_two_wins.setText(match.teamTwo + " wins")
+        first_break_name.setText(match.teamOne)
+        current_break_name.setText(match.teamOne)
+        next_break_name.setText(match.teamTwo)
     }
 }
