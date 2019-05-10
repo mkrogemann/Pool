@@ -18,5 +18,8 @@ class MatchTest {
         assertThat(match.winnerBreak, `is`(false))
         assertThat(match.finished, `is`(false))
         assertThat(match.isRace(), `is`(false))
+        assertThat(match.firstBreak, `is`("team_one"))
+        assertThat(match.currentBreak, `is`("team_one"))
+        assertThat(match.nextBreak, `is`("team_two"))
     }
 }

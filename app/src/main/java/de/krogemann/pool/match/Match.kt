@@ -11,6 +11,9 @@ data class Match(
     val winnerBreak: Boolean,
     val teamOneWins: Int = 0,
     val teamTwoWins: Int = 0,
+    val firstBreak: String = teamOne,
+    val currentBreak: String = teamOne,
+    val nextBreak: String = if (winnerBreak) "?" else teamTwo,
     val finished: Boolean = false
 ) : Parcelable {
 
