@@ -10,8 +10,7 @@ class MatchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match)
-        val parcelable = intent.extras.getParcelable<Match>("MATCH")
-        val match = parcelable
+        val match = intent.extras.getParcelable<Match>("MATCH")
         initializeDisplayState(match)
     }
 
