@@ -10,8 +10,39 @@ class MatchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match)
-        val match = intent.extras.getParcelable<Match>("MATCH")
+        var match = intent.extras.getParcelable<Match>("MATCH")
         initializeDisplayState(match)
+
+        team_one_wins.setOnClickListener {
+            match = nextMatchState(match, teamOneWins = true)
+        }
+
+        team_two_wins.setOnClickListener {
+            match = nextMatchState(match, teamOneWins = false)
+        }
+    }
+
+    private fun nextMatchState(match: Match, teamOneWins: Boolean): Match {
+        return if (teamOneWins) {
+            val nextMatchState = match.copy(
+                teamOneWins = match.teamOneWins + 1, teamTwoWins = match.teamTwoWins,
+                nextBreak = if (match.winnerBreak) "?" else match.currentBreak,
+                currentBreak = if (match.winnerBreak) match.teamOne else match.nextBreak)
+            updateDisploayState(nextMatchState)
+            nextMatchState
+        } else {
+            val nextMatchState = match.copy(
+                teamOneWins = match.teamOneWins, teamTwoWins = match.teamTwoWins + 1,
+                nextBreak = if (match.winnerBreak) "?" else match.currentBreak,
+                currentBreak = if (match.winnerBreak) match.teamTwo else match.nextBreak)
+            updateDisploayState(nextMatchState)
+            nextMatchState
+        }
+    }
+
+    private fun updateDisploayState(nextMatchState: Match) {
+        rack_counter.text = (nextMatchState.teamOneWins + nextMatchState.teamTwoWins + 1).toString()
+        current_break_name.setText(nextMatchState.currentBreak)
     }
 
     private fun initializeDisplayState(match: Match) {
