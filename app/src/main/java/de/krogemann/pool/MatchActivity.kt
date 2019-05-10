@@ -19,7 +19,6 @@ class MatchActivity : AppCompatActivity() {
         team_two_wins.setText(match.teamTwo + " wins")
         first_break_name.setText(match.teamOne)
         current_break_name.setText(match.teamOne)
-        next_break_name.setText(match.teamTwo)
         rack_counter.text = "1"
     }
 }

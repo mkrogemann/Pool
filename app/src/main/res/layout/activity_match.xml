@@ -27,24 +27,14 @@
         app:layout_constraintTop_toBottomOf="@+id/rack_header" />
 
     <TextView
-        android:id="@+id/next_break_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="72dp"
-        android:text="@string/next_break"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_break_header" />
-
-    <TextView
         android:id="@+id/first_break_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="8dp"
         android:text="@string/first_break"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/next_break_header" />
+        app:layout_constraintTop_toBottomOf="@+id/current_break_header" />
 
     <Button
         android:id="@+id/team_one_wins"
@@ -77,28 +67,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/next_break_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/next_break_header"
-        app:layout_constraintTop_toBottomOf="@+id/current_break_name" />
-
-    <EditText
         android:id="@+id/first_break_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintStart_toEndOf="@+id/first_break_header"
-        app:layout_constraintTop_toBottomOf="@+id/next_break_name" />
+        app:layout_constraintTop_toBottomOf="@+id/current_break_name" />
 
     <TextView
         android:id="@+id/textView2"
