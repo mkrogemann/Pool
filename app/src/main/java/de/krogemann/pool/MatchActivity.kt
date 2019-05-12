@@ -28,19 +28,19 @@ class MatchActivity : AppCompatActivity() {
                 teamOneWins = match.teamOneWins + 1, teamTwoWins = match.teamTwoWins,
                 nextBreak = if (match.winnerBreak) "?" else match.currentBreak,
                 currentBreak = if (match.winnerBreak) match.teamOne else match.nextBreak)
-            updateDisploayState(nextMatchState)
+            updateDisplayState(nextMatchState)
             nextMatchState
         } else {
             val nextMatchState = match.copy(
                 teamOneWins = match.teamOneWins, teamTwoWins = match.teamTwoWins + 1,
                 nextBreak = if (match.winnerBreak) "?" else match.currentBreak,
                 currentBreak = if (match.winnerBreak) match.teamTwo else match.nextBreak)
-            updateDisploayState(nextMatchState)
+            updateDisplayState(nextMatchState)
             nextMatchState
         }
     }
 
-    private fun updateDisploayState(nextMatchState: Match) {
+    private fun updateDisplayState(nextMatchState: Match) {
         rack_counter.text = (nextMatchState.teamOneWins + nextMatchState.teamTwoWins + 1).toString()
         team_one_score.text = nextMatchState.teamOneWins.toString()
         team_two_score.text = nextMatchState.teamTwoWins.toString()
