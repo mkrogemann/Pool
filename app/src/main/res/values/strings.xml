@@ -6,7 +6,7 @@
     <string name="first_break_label">(has first break)</string>
     <string name="race">Race?</string>
     <string name="race_to">To</string>
-    <string name="alternate_break">Alternate Break</string>
+    <string name="alternating_break">Alternating Break</string>
     <string name="winner_break">Winner Break</string>
     <string name="start_match">Start match</string>
     <string name="score">Score</string>
