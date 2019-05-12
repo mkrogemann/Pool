@@ -44,7 +44,7 @@ class MatchActivity : AppCompatActivity() {
         rack_counter.text = (nextMatchState.teamOneWins + nextMatchState.teamTwoWins + 1).toString()
         team_one_score.text = nextMatchState.teamOneWins.toString()
         team_two_score.text = nextMatchState.teamTwoWins.toString()
-        current_break_name.setText(nextMatchState.currentBreak)
+        current_break_name.text = nextMatchState.currentBreak
     }
 
     private fun initializeDisplayState(match: Match) {
@@ -52,7 +52,7 @@ class MatchActivity : AppCompatActivity() {
         val teamTwoWinsString = getString(R.string.team_wins, match.teamTwo)
         team_one_wins.text = teamOneWinsString
         team_two_wins.text = teamTwoWinsString
-        current_break_name.setText(match.teamOne)
+        current_break_name.text = match.teamOne
         team_one_score.text = "0"
         team_two_score.text = "0"
         rack_counter.text = "1"
