@@ -42,6 +42,8 @@ class MatchActivity : AppCompatActivity() {
 
     private fun updateDisploayState(nextMatchState: Match) {
         rack_counter.text = (nextMatchState.teamOneWins + nextMatchState.teamTwoWins + 1).toString()
+        team_one_score.text = nextMatchState.teamOneWins.toString()
+        team_two_score.text = nextMatchState.teamTwoWins.toString()
         current_break_name.setText(nextMatchState.currentBreak)
     }
 
@@ -51,6 +53,8 @@ class MatchActivity : AppCompatActivity() {
         team_one_wins.text = teamOneWinsString
         team_two_wins.text = teamTwoWinsString
         current_break_name.setText(match.teamOne)
+        team_one_score.text = "0"
+        team_two_score.text = "0"
         rack_counter.text = "1"
     }
 }
