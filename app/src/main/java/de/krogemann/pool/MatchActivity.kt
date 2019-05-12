@@ -50,7 +50,6 @@ class MatchActivity : AppCompatActivity() {
         val teamTwoWinsString = getString(R.string.team_wins, match.teamTwo)
         team_one_wins.text = teamOneWinsString
         team_two_wins.text = teamTwoWinsString
-        first_break_name.setText(match.teamOne)
         current_break_name.setText(match.teamOne)
         rack_counter.text = "1"
     }
