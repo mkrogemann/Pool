@@ -17,4 +17,5 @@
     <string name="team_two_wins">Team two wins</string>
     <string name="rack_number">Rack #</string>
     <string name="default_race_to_five">5</string>
+    <string name="team_wins">%s wins</string>
 </resources>
