@@ -44,7 +44,11 @@ class MatchActivity : AppCompatActivity() {
         rack_counter.text = (nextMatchState.teamOneWins + nextMatchState.teamTwoWins + 1).toString()
         team_one_score.text = nextMatchState.teamOneWins.toString()
         team_two_score.text = nextMatchState.teamTwoWins.toString()
-        current_break_name.text = nextMatchState.currentBreak
+        if (nextMatchState.isRace() && (nextMatchState.teamOneWins == nextMatchState.raceTo) || nextMatchState.teamTwoWins == nextMatchState.raceTo) {
+            // one team won the race, go to congratulation screen
+        } else {
+            current_break_name.text = nextMatchState.currentBreak
+        }
     }
 
     private fun initializeDisplayState(match: Match) {
