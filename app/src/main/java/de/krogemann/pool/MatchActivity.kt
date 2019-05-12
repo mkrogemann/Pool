@@ -1,5 +1,6 @@
 package de.krogemann.pool
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import de.krogemann.pool.match.Match
@@ -45,7 +46,12 @@ class MatchActivity : AppCompatActivity() {
         team_one_score.text = nextMatchState.teamOneWins.toString()
         team_two_score.text = nextMatchState.teamTwoWins.toString()
         if (nextMatchState.isRace() && (nextMatchState.teamOneWins == nextMatchState.raceTo) || nextMatchState.teamTwoWins == nextMatchState.raceTo) {
-            // one team won the race, go to congratulation screen
+            val bundle = Bundle()
+            val intent = Intent(this, WinnerActivity::class.java)
+            bundle.putParcelable("MATCH", nextMatchState)
+            intent.putExtras(bundle)
+
+            startActivity(intent)
         } else {
             current_break_name.text = nextMatchState.currentBreak
         }

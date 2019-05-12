@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MatchActivity" />
+        <activity android:name=".WinnerActivity" />
     </application>
 
 </manifest>
